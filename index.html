@@ -103,8 +103,8 @@ title: cards42 - Die Mitmach-Karten für Softwarearchitekt*innen
         </div>
         <div class="group">
             <div class="col span_1_of_2">
-                <img class="card-image lozad" data-src="cards/{{image}}.png" />
-                <noscript><img class="card-image" src="cards/{{image}}.png" alt="Das Bild für die Karte mit dem Namen {{card.name}}" /></noscript>
+                <noscript><img class="card-image" src="cards_svg/{{image}}.svg" alt="Das Bild für die Karte mit dem Namen {{card.name}}" /></noscript>
+                <img class="card-image lozad" data-src="cards_svg/{{image}}.svg" />
             </div>
             <div class="col span_1_of_2">
                 {{ card.content | markdownify }}
@@ -117,7 +117,7 @@ title: cards42 - Die Mitmach-Karten für Softwarearchitekt*innen
     <div class="section info-section">
         <div class="group">
             <div class="col span_2_of_2">        
-                <h2 id="section_{{i.title | url_encode }}">{{ i.title }}</h2>
+                <h2 id="{{i.title | url_encode | downcase }}">{{ i.title }}</h2>
                 {{ i.content | markdownify }}
             </div>
         </div>
